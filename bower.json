@@ -1,0 +1,17 @@
+{
+  "name": "interview_system",
+  "description": "",
+  "main": "app.js",
+  "license": "ISC",
+  "moduleType": [
+    "node"
+  ],
+  "homepage": "index.html",
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-route": "^1.5.5",
+    "jquery": "^2.2.3",
+    "bootstrap": "^3.3.6",
+    "angular-chart.js": "^0.10.2"
+  }
+}
