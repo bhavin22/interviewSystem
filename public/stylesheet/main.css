@@ -1,3 +1,41 @@
+.jumbotron {
+	margin-top: 20px;
+}
+
+.default-cursor {
+	cursor: default !important;
+}
+
 .btn {
-	margin: 30px 0px;
+	margin: 10px 0px;
+}
+
+textarea {
+	resize: none;
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}
+
+.arrived {
+	background-color: #8ED48E !important;
+	border-color: #529452  !important;
+}
+
+.arrived:hover {
+	background-color: #80B780 !important;
+}
+
+.decisionTaken {
+	background-color: #ccc !important;
+	border-color: #A09C9C !important;
+}
+
+.decisionTaken:hover {
+	background-color: #BFB8B8 !important;
+}
+
+.text-center {
+	text-align: center;;
 }

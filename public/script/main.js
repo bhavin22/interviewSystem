@@ -13,6 +13,31 @@ interviewApp.config(function($routeProvider) {
 			controller  : 'homeController'
 		})
 
+		.when('/interviewPrep', {
+			templateUrl : 'views/courseList.html',
+			controller  : 'interviewPrepController'
+		})
+
+		.when('/checkInStudent', {
+			templateUrl : 'views/checkInStudent.html',
+			controller  : 'checkInStudentController'
+		})
+		
+		.when('/interviewPanel', {
+			templateUrl : 'views/courseList.html',
+			controller  : 'interviewPanelController'
+		})
+
+		.when('/studentList', {
+			templateUrl : 'views/studentList.html',
+			controller  : 'studentListController'
+		})
+
+		.when('/studentInterview', {
+			templateUrl : 'views/studentInterview.html',
+			controller  : 'studentInterviewController'
+		})
+
 		.when('/report1', {
 			templateUrl : 'views/report1.html',
 			controller  : 'report1Controller'

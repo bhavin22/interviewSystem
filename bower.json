@@ -12,6 +12,7 @@
     "angular-route": "^1.5.5",
     "jquery": "^2.2.3",
     "bootstrap": "^3.3.6",
-    "angular-chart.js": "^0.10.2"
+    "angular-chart.js": "^0.10.2",
+    "css-toggle-switch": "^4.0.2"
   }
 }

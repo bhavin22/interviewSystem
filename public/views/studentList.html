@@ -1,0 +1,26 @@
+
+<div class="row">
+	<div class="col-sm-6">
+		<label class="btn btn-lg btn-primary btn-block default-cursor">{{selectedCourse}}</label>	
+	</div>
+</div>
+<br>
+<br>
+<div class="row">
+	<div class="col-sm-6" ng-repeat="student in studentList">
+		<button class="btn btn-lg btn-default btn-block" ng-class="student.arrivalTime ? ((student.decision === 0 || student.decision === 1) ? 'decisionTaken' : 'arrived') : ''" value="{{student.firstName}},{{student.lastName}},{{student.arrivalTime}}" ng-click="studentSelected();">{{student.firstName}} {{student.lastName}}    {{student.arrivalTime}}</button>
+	</div>
+</div>
+<br>
+<br>
+<div class="row">
+	<div class="col-sm-4">
+		<label class="btn btn-lg btn-primary btn-block default-cursor">Total {{studentCount}} students</label>
+	</div>
+	<div class="col-sm-4">
+		<button class="btn btn-lg btn-primary btn-block" ng-click="toggleStudentList($event);">Show only waiting students</button>
+	</div>
+	<div class="col-sm-4">
+		<a href="#interviewPanel" class="btn btn-lg btn-primary btn-block">Back</a>
+	</div>
+</div>

@@ -30,6 +30,7 @@ con.connect(function(err){
 
 require(__dirname + "/database/reportData.js")(app, con);
 require(__dirname + "/database/courseData.js")(app, con);
+require(__dirname + "/database/studentData.js")(app, con);
 
 
 // con.end(function(err) {

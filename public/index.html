@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="stylesheet/main.css"/>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css">
+    <link rel="stylesheet" href="bower_components/css-toggle-switch/dist/toggle-switch.css">
 
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -17,11 +18,18 @@
 	<script src='script/controllers/homeController.js'></script>
 	<script src='script/controllers/report1Controller.js'></script>
 	<script src='script/controllers/report2Controller.js'></script>
+	<script src='script/controllers/interviewPrepController.js'></script>
+	<script src='script/controllers/interviewPanelController.js'></script>
+	<script src='script/controllers/checkInStudentController.js'></script>
+	<script src='script/controllers/studentListController.js'></script>
+	<script src='script/controllers/studentInterviewController.js'></script>
 	<title>Interview System</title>
 </head>
 <body>
-	<div id="main">
-	    <div ng-view></div>
+	<div class="container">
+		<div class="jumbotron">
+	    	<div ng-view></div>
+	  	</div>
 	</div>
 </body>
 </html>
