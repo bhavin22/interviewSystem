@@ -41,7 +41,11 @@ textarea {
 }
 
 .div-scroll-y {
-	max-height: 300px;
+	max-height: 170px;
 	overflow-y:auto;
 	overflow-x:hidden;
+}
+
+.student-selected {
+	background-color: blue;
 }

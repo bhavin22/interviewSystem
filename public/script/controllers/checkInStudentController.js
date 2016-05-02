@@ -21,7 +21,7 @@ interviewApp.controller('checkInStudentController', ['$scope', '$rootScope', '$h
 			}
 		});
 
-		$scope.studentSelected = function() {
+		$scope.studentSelected = function(event) {
 			$scope.selectedStudent = this.student;
 			$scope.search = $scope.selectedStudent.lastName;
 		};

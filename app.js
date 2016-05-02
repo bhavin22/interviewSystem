@@ -11,8 +11,6 @@ app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
 require(__dirname + "/route.js")(app, path);
 
-app.listen(3000);
-
 var con = mysql.createConnection({
   host: "localhost",
   user: "root",
@@ -32,6 +30,4 @@ require(__dirname + "/database/reportData.js")(app, con);
 require(__dirname + "/database/courseData.js")(app, con);
 require(__dirname + "/database/studentData.js")(app, con);
 
-
-// con.end(function(err) {
-// });
+app.listen(3000);
