@@ -1,6 +1,6 @@
 interviewApp.controller('studentInterviewController', ['$scope', '$rootScope', '$location', '$http', function($scope, $rootScope, $location, $http) {
 	if(angular.isUndefined($rootScope.selectedStudent) || $rootScope.selectedStudent === null) {
-        alert("Please select course and student first");
+        bootbox.alert("Please select course and student first");
         $location.path('/interviewPanel');
     } else {
     	if($rootScope.selectedStudent.decision === null) {
