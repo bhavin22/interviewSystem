@@ -6,7 +6,16 @@
 	</div>
 </div>
 <br>
-<br>
+<div class="row" ng-if="isPrepController === true">
+	<div class="col-sm-12">
+		<input type="search" ng-model="search" placeholder="Search..." class="form-control" id="studentName"></input>
+			<ul class="list-group div-scroll-y" id="searchStudent">
+		    	<li class="list-group-item cursor-pointer" ng-repeat="student in studentList | filter:filterBySearch" ng-click="studentSelected($event);">
+		        {{ student.lastName }},{{student.firstName}} : {{student.courseName}}
+		    </li>
+	    </ul>
+	</div>
+</div>
 <div class="row div-scroll-y">
 	<div class="col-sm-6" ng-repeat="course in courseList">
 		<button class="btn btn-lg btn-default btn-block" value="{{course}}" ng-click="courseSelected();">{{course}}</button>

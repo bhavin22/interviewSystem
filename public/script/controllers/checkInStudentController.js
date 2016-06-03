@@ -1,26 +1,30 @@
 interviewApp.controller('checkInStudentController', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location) {
-	if(angular.isUndefined($rootScope.selectedCourse) || $rootScope.selectedCourse === null) {
+	if(!$rootScope.selectedCourse) {
 		bootbox.alert("Please select course first");
 		$location.path('/interviewPrep');
 	} else {
 		$scope.studentList = [];
 		$scope.selectedStudent = null;
 	  	$scope.search = '';
+		if($rootScope.selectedStudent){
+			$scope.selectedStudent = $rootScope.selectedStudent;
+			$scope.markAsArrived();
+		}
+		else{	
+			$http.get("getStudentList", {
+				params : {
+					course : $rootScope.selectedCourse
+				}
+			}).then(function (rows) {
+				for(var i in rows.data) {
+					$scope.studentList.push({
+						id : rows.data[i].id,
+						lastName: rows.data[i].lastName
+					});
+				}
+			});
+		}
 	    var regex;
-
-		$http.get("getStudentList", {
-			params : {
-				course : $rootScope.selectedCourse
-			}
-		}).then(function (rows) {
-			for(var i in rows.data) {
-				$scope.studentList.push({
-					id : rows.data[i].id,
-					lastName: rows.data[i].lastName
-				});
-			}
-		});
-
 		$scope.studentSelected = function(event) {
 			$scope.selectedStudent = this.student;
 			$scope.search = $scope.selectedStudent.lastName;

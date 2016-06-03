@@ -12,7 +12,7 @@
 				<input type="search" ng-model="search" placeholder="Search..." class="form-control" id="studentName"></input>
 				<ul class="list-group div-scroll-y" id="searchStudent">
 		            <li class="list-group-item cursor-pointer" ng-repeat="student in studentList | filter:filterBySearch" ng-click="studentSelected($event);">
-		                {{ student.lastName }}
+		                {{ student.lastName }},{{student.firstName}} : {{student.courseName}}
 		            </li>
 	            </ul>
             </div>

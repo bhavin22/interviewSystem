@@ -1,4 +1,5 @@
 interviewApp.controller('interviewPanelController', ['$scope', '$rootScope', '$location', '$http', function($scope, $rootScope, $location, $http) {
+  $scope.isPrepController = false;
 	$scope.courseList = [];
 	$rootScope.selectedCourse = null;
 	$http.get("getCourseList").then(function (rows) {
