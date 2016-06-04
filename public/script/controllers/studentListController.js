@@ -22,7 +22,10 @@ interviewApp.controller('studentListController', ['$scope', '$rootScope', '$http
                     arrivalTime: rows.data[i].arrivalTime,
                     decision : rows.data[i].decision,
                     comment : rows.data[i].comment,
-                    reference : rows.data[i].reference
+                    reference : rows.data[i].reference,
+                    field1 : rows.data[i].field1,
+                    field2 : rows.data[i].field2,
+                    field3 : rows.data[i].field3
                 });
                 if(rows.data[i].arrivalTime && rows.data[i].decision === null) {
                     $scope.waitingStudentList.push({
@@ -32,7 +35,10 @@ interviewApp.controller('studentListController', ['$scope', '$rootScope', '$http
                         arrivalTime: rows.data[i].arrivalTime,
                         decision : rows.data[i].decision,
                         comment : rows.data[i].comment,
-                        reference : rows.data[i].reference
+                        reference : rows.data[i].reference,
+                        field1 : rows.data[i].field1,
+                        field2 : rows.data[i].field2,
+                        field3 : rows.data[i].field3
                     });
                 }
             }

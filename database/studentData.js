@@ -30,7 +30,7 @@ module.exports = function(app, con) {
 	});
 
 	app.post('/saveStudentData', function(req, res) {	
-		con.query('UPDATE interview_info SET decision = '+ req.body.decision + ', comment = "'+ req.body.comment + '", reference = '+ req.body.reference + ' WHERE id="' + req.body.id + '"', function(err,rows){
+		con.query('UPDATE interview_info SET decision = '+ req.body.decision + ', comment = "'+ req.body.comment + '", reference = '+ req.body.reference + ', field1= "' + req.body.field1 + '", field2 = "' + req.body.field2 +'", field3 = "' + req.body.field3 + '" WHERE id="' + req.body.id + '"', function(err,rows){
 		  	if(err) {
 		  		console.log(err);
 		  	} else {
