@@ -6,38 +6,15 @@ interviewApp.controller('checkInStudentController', ['$scope', '$rootScope', '$h
 		$scope.studentList = [];
 		$scope.selectedStudent = null;
 	  	$scope.search = '';
-		if($rootScope.selectedStudent){
-			$scope.selectedStudent = $rootScope.selectedStudent;
-			$scope.markAsArrived();
-		}
-		else{	
-			$http.get("getStudentList", {
-				params : {
-					course : $rootScope.selectedCourse
-				}
-			}).then(function (rows) {
-				for(var i in rows.data) {
-					$scope.studentList.push({
-						id : rows.data[i].id,
-						lastName: rows.data[i].lastName
-					});
-				}
-			});
-		}
-	    var regex;
-		$scope.studentSelected = function(event) {
-			$scope.selectedStudent = this.student;
-			$scope.search = $scope.selectedStudent.lastName;
-		};
 
-		$scope.markAsArrived = function() {
+	  	$scope.markAsArrived = function() {
 			if(angular.isUndefined($scope.selectedStudent) || $scope.selectedStudent === null) {
 				bootbox.alert("Please select student by typing lastname in search bar");
 			} else {
 				$http.post("checkInStudent", {
 		            id: $scope.selectedStudent.id
 		        }).then(function () {
-		        	$scope.search = '';
+		        	$scope.search = $scope.selectedStudent.lastName;
 					bootbox.alert("Student " + $scope.selectedStudent.lastName + " has been checked in for course " + $rootScope.selectedCourse)
 					$scope.selectedStudent = null;
 				});
@@ -56,5 +33,32 @@ interviewApp.controller('checkInStudentController', ['$scope', '$rootScope', '$h
 	        if (!$scope.search) return false;
 	        return regex.test(student.lastName);
 	    };
+
+	    var regex;
+		$scope.studentSelected = function(event) {
+			$scope.selectedStudent = this.student;
+			$scope.search = $scope.selectedStudent.lastName;
+		};
+
+		if($rootScope.selectedStudent){
+			$scope.selectedStudent = $rootScope.selectedStudent;
+			$scope.markAsArrived();
+		}
+		else{	
+			$http.get("getStudentList", {
+				params : {
+					course : $rootScope.selectedCourse
+				}
+			}).then(function (rows) {
+				for(var i in rows.data) {
+					$scope.studentList.push({
+						id : rows.data[i].id,
+						lastName: rows.data[i].lastName,
+						firstName : rows.data[i].firstName,
+						course : rows.data[i].course
+					});
+				}
+			});
+		} 
 	}
 }]);
