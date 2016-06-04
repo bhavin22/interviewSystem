@@ -3,7 +3,7 @@
 		<label class="btn btn-lg btn-primary btn-block default-cursor">{{selectedCourse}}</label>	
 	</div>
 	<div class="col-sm-6">
-		<label class="btn btn-lg btn-primary btn-block default-cursor">{{selectedStudent.lastName}}</label>	
+		<label class="btn btn-lg btn-primary btn-block default-cursor">{{selectedStudent.lastName }}, {{selectedStudent.firstName}} </label>	
 	</div>
 </div>
 <br>
@@ -12,18 +12,16 @@
 	<div class="col-xs-2"></div>
 	<div class="col-xs-8 text-center">
 		<fieldset>
-  			<strong>reference</strong>
-  			<div class="switch-toggle switch-candy">
-    		<input id="Option1" name="reference" type="radio" value="0" ng-model="selectedStudent.reference" ng-checked="selectedStudent.reference === 0">
-    		<label for="Option1" onclick="">Option1</label>
-
-    		<input id="Option2" name="reference" type="radio" value="1" ng-model="selectedStudent.reference" ng-checked="selectedStudent.reference === 1">
-    		<label for="Option2" onclick="">Option2</label>
-
-    		<input id="Option3" name="reference" type="radio" value="2" ng-model="selectedStudent.reference" ng-checked="selectedStudent.reference === 2">
-    		<label for="Option3" onclick="">Option3</label>
-    		<a></a>	
-  			</div>
+  			<h3>reference</h3>
+  			<div class="radio-inline">
+  				<label><input type="radio" name="refRadio" value="0" ng-model="selectedStudent.reference" ng-checked="selectedStudent.reference === 0">No Refs</label>
+			</div>
+			<div class="radio-inline">
+  				<label><input type="radio" name="refRadio" value="1" ng-model="selectedStudent.reference" ng-checked="selectedStudent.reference === 1">1 Refs</label>
+			</div>
+			<div class="radio-inline">
+  				<label><input type="radio" name="refRadio" value="2" ng-model="selectedStudent.reference" ng-checked="selectedStudent.reference === 2">2 Refs</label>
+			</div>
 		</fieldset>
 	</div>
 	<div class="col-xs-2"></div>
@@ -31,25 +29,25 @@
 <br>
 <br>
 <div class="row">
-	<div class="col-xs-4"></div>
-	<div class="col-xs-4">
-		<label class="switch-light switch-candy text-center" onclick="">
-		  	<input type="checkbox" ng-model="selectedStudent.decision" value="selectedStudent.decision">
-		  	<strong>Decision</strong>
-		  	<span>
-		    	<span>Off</span>
-		    	<span>On</span>
-		    	<a></a>
-		  	</span>
-		</label>
+	<div class="col-xs-3"></div>
+	<div class="col-xs-6 text-center">
+		<fieldset>
+			<h3>Decision</h3>
+			<div class="radio-inline">
+					<label><input type="radio" name="decRadio" value="0" ng-model="selectedStudent.decision" ng-checked="selectedStudent.decision === 0">Do Not Offer</label>
+			</div>
+			<div class="radio-inline">
+					<label><input type="radio" name="decRadio" value="1" ng-model="selectedStudent.decision" ng-checked="selectedStudent.decision === 1">Offer A Place</label>
+			</div>
+		</fieldset>
 	</div>
-	<div class="col-xs-4"></div>
+	<div class="col-xs-3"></div>
 </div>
 <br>
 <br>
 <div class="row">
 	<div class="col-sm-6">
-		<textarea class="form-control" ng-model="selectedStudent.comment"></textarea> 
+		<textarea class="form-control" placeholder="Interview Notes" ng-model="selectedStudent.comment"></textarea> 
 	</div>
 	<div class="col-sm-6">
 		<div class="row">

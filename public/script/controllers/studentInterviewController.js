@@ -3,10 +3,8 @@ interviewApp.controller('studentInterviewController', ['$scope', '$rootScope', '
         bootbox.alert("Please select course and student first");
         $location.path('/interviewPanel');
     } else {
-    	if($rootScope.selectedStudent.decision === null || $rootScope.selectedStudent.decision === 0) {
-			$rootScope.selectedStudent.decision = false;
-		} else {
-			$rootScope.selectedStudent.decision = true;
+    	if($rootScope.selectedStudent.decision === null) {
+			$rootScope.selectedStudent.decision = 0;
 		}
 		if($rootScope.selectedStudent.reference === null) {
 			$rootScope.selectedStudent.reference = 0;
@@ -15,11 +13,6 @@ interviewApp.controller('studentInterviewController', ['$scope', '$rootScope', '
 			$rootScope.selectedStudent.comment = "";
 		}
     	$scope.saveData = function() {
-    		if($rootScope.selectedStudent.decision) {
-    			$rootScope.selectedStudent.decision = 1;
-    		} else {
-    			$rootScope.selectedStudent.decision = 0;
-    		}
     		$http.post("saveStudentData", {
 	            id: $rootScope.selectedStudent.id,
 	            decision : $rootScope.selectedStudent.decision,
